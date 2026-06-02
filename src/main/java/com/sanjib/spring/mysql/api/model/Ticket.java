@@ -1,5 +1,7 @@
 package com.sanjib.spring.mysql.api.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,7 +26,14 @@ public class Ticket {
 	private Long id;
 	private String category;
 	private double amount;
+	private Date expiry;
 	
+	public Date getExpiry() {
+		return expiry;
+	}
+	public void setExpiry(Date expiry) {
+		this.expiry = expiry;
+	}
 	public Long getId() {
 		return id;
 	}

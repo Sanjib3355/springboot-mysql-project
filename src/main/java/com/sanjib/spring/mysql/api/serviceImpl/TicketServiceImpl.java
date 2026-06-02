@@ -1,8 +1,10 @@
 package com.sanjib.spring.mysql.api.serviceImpl;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.auditing.CurrentDateTimeProvider;
 
 import com.sanjib.spring.mysql.api.dao.TicketDao;
 import com.sanjib.spring.mysql.api.dto.TicketDTO;
@@ -28,6 +30,10 @@ public class TicketServiceImpl implements TicketService {
 			td.setAmount(t.getAmount());
 			td.setCategory(t.getCategory());;
 			td.setUserId(t.getId());
+			
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DAY_OF_MONTH, 3);
+			td.setExpiry(cal.getTime());
 			
 			//ticketDao.saveAll(ticketList);
 

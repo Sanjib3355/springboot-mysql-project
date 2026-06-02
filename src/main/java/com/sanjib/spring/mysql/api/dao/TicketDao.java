@@ -7,8 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.sanjib.spring.mysql.api.dto.TicketDTO;
 import com.sanjib.spring.mysql.api.model.Ticket;
 
-import jakarta.persistence.Entity;
-
 public interface TicketDao extends JpaRepository<Ticket, Long>{
 
 	List<TicketDTO> saveAll(List<TicketDTO> ticketDTOlist);

@@ -2,8 +2,7 @@ package com.sanjib.spring.mysql.api.controller;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sanjib.spring.mysql.api.dao.TicketDao;
 import com.sanjib.spring.mysql.api.dto.TicketDTO;
 import com.sanjib.spring.mysql.api.model.Ticket;
-import com.sanjib.spring.mysql.api.service.TicketService;
 import com.sanjib.spring.mysql.api.serviceImpl.TicketServiceImpl;
 
 @RestController
 @RequestMapping("/ticket")
 public class TicketController {
 
+	@Autowired
 	private TicketServiceImpl ticketServiceImpl;
 	
 	private TicketController(TicketServiceImpl service) {
